@@ -20,3 +20,4 @@ math -script listnumden-converter.wl [inputFolder] [outputFolder]
 1. You can use the converter in Mathematica notebook. If so, remember to set `commandLineMode=False` and type in the \[inputFolder\] and \[outputFolder\] by hand.
 2. It is recommended to use absolute paths for \[inputFolder\] and \[outputFolder\].
 3. If \[outputFolder\] dose not exit, it will be created. If it exists, the files inside may be overwritten with no warning message.
+4. The conversion is in parallel using Mathmatica's ParallelTable.
