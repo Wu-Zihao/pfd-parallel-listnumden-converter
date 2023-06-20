@@ -19,15 +19,21 @@ If[commandLineMode,
 files=FileNames[All,inputFolder];
 
 
-Convert[input_]:=Module[{termList,listNumDen},
+numbers=ToString/@Range[0,9]
+
+
+Convert[input_]:=Module[{termList,listNumDen,result},
 	If[Head[input]===Plus,
 		termList=List@@input
 	,
 		termList={input}
 	];
 	listNumDen={Numerator[#],Denominator[#]}&/@termList;
-	StringReplace[ToString[InputForm[listNumDen]],{"{"->"list(","}"->")"}]
-
+	result=StringReplace[ToString[InputForm[listNumDen]],{"{"->"list(","}"->")"}];
+	result=StringReplace[result,
+		"^"~~Shortest[x__]~~"/":>If[Complement[StringSplit[x,""]//Union,numbers]==={},"^("<>x<>")/","^"<>x<>"/"]
+	];
+	result
 ]
 
 
