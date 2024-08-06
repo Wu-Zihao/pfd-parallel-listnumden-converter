@@ -1,5 +1,10 @@
 # pfd-parallel-listnumden-converter
 
+## Important Notice
+This repo. has stopped maintaining since the end of 2023. All its main code is integrated in the pfd-parallel Mathematica interface: [PfdParallelM](https://github.com/Wu-Zihao/PfdParallelM).
+
+
+
 ## Usage
 
 pfd-parallel-listnumden-converter is a format converter for [pfd-parallel](https://github.com/singular-gpispace/pfd-parallel).
